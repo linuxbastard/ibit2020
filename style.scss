@@ -11,3 +11,39 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  ibit2020
 */
+.footer-partners-section {
+  padding: 0;
+}
+#content div.sharedaddy, #main div.sharedaddy, div.sharedaddy {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#banner-img-content {
+  .banner-time {
+    padding:0;
+    .elementor-column-wrap {
+      padding: 0;
+    }
+  }
+}
+@media (min-width: 700px) {
+  #content div.sharedaddy, #main div.sharedaddy, div.sharedaddy {
+    bottom: auto;
+    top: 100px;
+    left: 20px;
+    transform: none;
+  }
+}
+
+#mc_embed_signup {
+  background: transparent;
+  #mc-embedded-subscribe-form {
+    @media (min-width: 700px) {
+      padding-top: 0;
+      padding-left: 0;
+    }
+
+  }
+}
