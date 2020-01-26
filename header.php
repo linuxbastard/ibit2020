@@ -21,7 +21,7 @@
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
-
+        <meta name="google-site-verification" content="kX7xYP78wBW5QUi0Zi79Jushd1XKBNozxwT0H99yPKQ" />
 	</head>
 
 	<body <?php body_class(); ?>>
