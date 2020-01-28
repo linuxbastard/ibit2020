@@ -1,3 +1,3 @@
 # IBIT 2020 WP Theme
 
-_This theme is for the site [https://isangbata-isangtasa.org][https://isangbata-isangtasa.org]_
+_This theme is for the site [Isang Bata, Isang Tasa](https://isangbata-isangtasa.org)_
