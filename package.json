@@ -1,0 +1,20 @@
+{
+  "name": "ibit2020",
+  "version": "1.0.0",
+  "description": "WordPress theme for Isang Bata, Isang Tasa",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch --source-map true . -o ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://linuxbastard@bitbucket.org/isangbataisangtasa/ibit2020.git"
+  },
+  "author": "Ronaldo Bartolome",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/isangbataisangtasa/ibit2020#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
