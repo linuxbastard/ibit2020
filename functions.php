@@ -16,8 +16,8 @@ function ibit2020_enqueue_styles() {
 add_image_size( 'image-box', 155); // width, height, crop
 
 // Register the three useful image sizes for use in Add Media modal
-add_filter( 'image_size_names_choose', 'wpshout_custom_sizes' );
-function wpshout_custom_sizes( $sizes ) {
+add_filter( 'image_size_names_choose', 'ibit_custom_sizes' );
+function ibit_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'image-box' => __( 'Medium Width' ),
     ) );
