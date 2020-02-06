@@ -10,6 +10,7 @@ function ibit2020_enqueue_styles() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     ); */
+    wp_enqueue_script( 'ibit-customjs', get_stylesheet_directory_uri() . '/custom.js', array ( 'jquery' ), 1.1, true);
 }
 // Add featured image sizes
 add_image_size( 'image-box', 155); // width, height, crop
