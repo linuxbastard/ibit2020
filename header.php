@@ -28,160 +28,187 @@
 
 		<?php
 		wp_body_open();
-		?>
 
-		<header id="site-header" class="header-footer-group" role="banner">
+		if ( ! is_page_template( array( 'templates/template-canvas.php' ) ) ) {
+        ?>
 
-			<div class="header-inner section-inner">
+        <header id="site-header" class="header-footer-group" role="banner">
 
-				<div class="header-titles-wrapper">
+            <div class="header-inner section-inner">
 
-					<?php
+                <div class="header-titles-wrapper">
 
-					// Check whether the header search is activated in the customizer.
-					$enable_header_search = get_theme_mod( 'enable_header_search', true );
+                    <?php
 
-					if ( true === $enable_header_search ) {
+                    // Check whether the header search is activated in the customizer.
+                    $enable_header_search = get_theme_mod('enable_header_search', true);
 
-						?>
+                    if (true === $enable_header_search) {
 
-						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                        ?>
+
+                        <button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal"
+                                data-toggle-body-class="showing-search-modal"
+                                data-set-focus=".search-modal .search-field" aria-expanded="false">
 							<span class="toggle-inner">
 								<span class="toggle-icon">
-									<?php twentytwenty_the_theme_svg( 'search' ); ?>
+									<?php twentytwenty_the_theme_svg('search'); ?>
 								</span>
-								<span class="toggle-text"><?php _e( 'Search', 'twentytwenty' ); ?></span>
+								<span class="toggle-text"><?php _e('Search', 'twentytwenty'); ?></span>
 							</span>
-						</button><!-- .search-toggle -->
+                        </button><!-- .search-toggle -->
 
-					<?php } ?>
+                    <?php } ?>
 
-					<div class="header-titles">
+                    <div class="header-titles">
 
-						<?php
-							// Site title or logo.
-							twentytwenty_site_logo();
+                        <?php
+                        // Site title or logo.
+                        twentytwenty_site_logo();
+                        if ( has_custom_logo() ) {
+                            ?>
+                            <a class="site-logo-heading" href="<?php echo esc_url( get_home_url( null, '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 
-							// Site description.
-							//twentytwenty_site_description();
-						?>
+                        <?php
+                        }
 
-					</div><!-- .header-titles -->
+                        // Site description.
+                        twentytwenty_site_description();
+                        ?>
 
-					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                    </div><!-- .header-titles -->
+
+                    <button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"
+                            data-toggle-body-class="showing-menu-modal" aria-expanded="false"
+                            data-set-focus=".close-nav-toggle">
 						<span class="toggle-inner">
 							<span class="toggle-icon">
-								<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
+                                <div id="nav-icon2">
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                  <span></span>
+                                </div>
+								<?php /*twentytwenty_the_theme_svg('ellipsis'); */?>
 							</span>
-							<span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
+							<!--<span class="toggle-text"><?php /*_e('Menu', 'twentytwenty'); */?></span>-->
 						</span>
-					</button><!-- .nav-toggle -->
+                    </button><!-- .nav-toggle -->
 
-				</div><!-- .header-titles-wrapper -->
+                </div><!-- .header-titles-wrapper -->
 
-				<div class="header-navigation-wrapper">
+                <div class="header-navigation-wrapper">
 
-					<?php
-					if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-						?>
+                    <?php
+                    if (has_nav_menu('primary') || !has_nav_menu('expanded')) {
+                        ?>
 
-							<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
+                        <nav class="primary-menu-wrapper"
+                             aria-label="<?php esc_attr_e('Horizontal', 'twentytwenty'); ?>" role="navigation">
 
-								<ul class="primary-menu reset-list-style">
+                            <ul class="primary-menu reset-list-style">
 
-								<?php
-								if ( has_nav_menu( 'primary' ) ) {
+                                <?php
+                                if (has_nav_menu('primary')) {
 
-									wp_nav_menu(
-										array(
-											'container'  => '',
-											'items_wrap' => '%3$s',
-											'theme_location' => 'primary',
-										)
-									);
+                                    wp_nav_menu(
+                                        array(
+                                            'container' => '',
+                                            'items_wrap' => '%3$s',
+                                            'theme_location' => 'primary',
+                                        )
+                                    );
 
-								} elseif ( ! has_nav_menu( 'expanded' ) ) {
+                                } elseif (!has_nav_menu('expanded')) {
 
-									wp_list_pages(
-										array(
-											'match_menu_classes' => true,
-											'show_sub_menu_icons' => true,
-											'title_li' => false,
-											'walker'   => new TwentyTwenty_Walker_Page(),
-										)
-									);
+                                    wp_list_pages(
+                                        array(
+                                            'match_menu_classes' => true,
+                                            'show_sub_menu_icons' => true,
+                                            'title_li' => false,
+                                            'walker' => new TwentyTwenty_Walker_Page(),
+                                        )
+                                    );
 
-								}
-								?>
+                                }
+                                ?>
 
-								</ul>
+                            </ul>
 
-							</nav><!-- .primary-menu-wrapper -->
+                        </nav><!-- .primary-menu-wrapper -->
 
-						<?php
-					}
+                        <?php
+                    }
 
-					if ( true === $enable_header_search || has_nav_menu( 'expanded' ) ) {
-						?>
+                    if (true === $enable_header_search || has_nav_menu('expanded')) {
+                        ?>
 
-						<div class="header-toggles hide-no-js">
+                        <div class="header-toggles hide-no-js">
 
-						<?php
-						if ( has_nav_menu( 'expanded' ) ) {
-							?>
+                            <?php
+                            if (has_nav_menu('expanded')) {
+                                ?>
 
-							<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
+                                <div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
 
-								<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
+                                    <button class="toggle nav-toggle desktop-nav-toggle"
+                                            data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal"
+                                            aria-expanded="false" data-set-focus=".close-nav-toggle">
 									<span class="toggle-inner">
-										<span class="toggle-text"><?php _e( 'Menu', 'twentytwenty' ); ?></span>
+										<span class="toggle-text"><?php _e('Menu', 'twentytwenty'); ?></span>
 										<span class="toggle-icon">
-											<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
+											<?php twentytwenty_the_theme_svg('ellipsis'); ?>
 										</span>
 									</span>
-								</button><!-- .nav-toggle -->
+                                    </button><!-- .nav-toggle -->
 
-							</div><!-- .nav-toggle-wrapper -->
+                                </div><!-- .nav-toggle-wrapper -->
 
-							<?php
-						}
+                                <?php
+                            }
 
-						if ( true === $enable_header_search ) {
-							?>
+                            if (true === $enable_header_search) {
+                                ?>
 
-							<div class="toggle-wrapper search-toggle-wrapper">
+                                <div class="toggle-wrapper search-toggle-wrapper">
 
-								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
+                                    <button class="toggle search-toggle desktop-search-toggle"
+                                            data-toggle-target=".search-modal"
+                                            data-toggle-body-class="showing-search-modal"
+                                            data-set-focus=".search-modal .search-field" aria-expanded="false">
 									<span class="toggle-inner">
-										<?php twentytwenty_the_theme_svg( 'search' ); ?>
-										<span class="toggle-text"><?php _e( 'Search', 'twentytwenty' ); ?></span>
+										<?php twentytwenty_the_theme_svg('search'); ?>
+										<span class="toggle-text"><?php /** _e('Search', 'twentytwenty'); */?></span>
 									</span>
-								</button><!-- .search-toggle -->
+                                    </button><!-- .search-toggle -->
 
-							</div>
+                                </div>
 
-							<?php
-						}
-						?>
+                                <?php
+                            }
+                            ?>
 
-						</div><!-- .header-toggles -->
-						<?php
-					}
-					?>
+                        </div><!-- .header-toggles -->
+                        <?php
+                    }
+                    ?>
 
-				</div><!-- .header-navigation-wrapper -->
+                </div><!-- .header-navigation-wrapper -->
 
-			</div><!-- .header-inner -->
+            </div><!-- .header-inner -->
 
-			<?php
-			// Output the search modal (if it is activated in the customizer).
-			if ( true === $enable_header_search ) {
-				get_template_part( 'template-parts/modal-search' );
-			}
-			?>
+            <?php
+            // Output the search modal (if it is activated in the customizer).
+            if (true === $enable_header_search) {
+                get_template_part('template-parts/modal-search');
+            }
+            ?>
 
-		</header><!-- #site-header -->
+        </header><!-- #site-header -->
 
-		<?php
-		// Output the menu modal.
-		get_template_part( 'template-parts/modal-menu' );
+<?php
+// Output the menu modal.
+get_template_part('template-parts/modal-menu');
+}
