@@ -1,4 +1,8 @@
 <?php
+
+require get_template_directory() . '/classes/class-twentytwenty-svg-icons.php';
+require get_stylesheet_directory (). '/classes/more-svg-icons.php';
+
 add_action( 'wp_enqueue_scripts', 'ibit2020_enqueue_styles' );
 function ibit2020_enqueue_styles() {
 
