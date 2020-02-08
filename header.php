@@ -61,12 +61,14 @@
                     <?php } ?>
 
                     <div class="header-titles">
-
+                        <div class="logo-right">
                         <?php
                         // Site title or logo.
                         twentytwenty_site_logo();
                         if ( has_custom_logo() ) {
                             ?>
+                        </div>
+                        <div class="logo-left">
                             <a class="site-logo-heading" href="<?php echo esc_url( get_home_url( null, '/' ) ); ?>"><?php echo get_bloginfo( 'name' ); ?></a>
 
                         <?php
@@ -75,6 +77,7 @@
                         // Site description.
                         twentytwenty_site_description();
                         ?>
+                        </div>
 
                     </div><!-- .header-titles -->
 
