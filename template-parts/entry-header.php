@@ -13,7 +13,7 @@ if ( is_singular() ) {
 	$entry_header_classes .= ' header-footer-group';
 }
 
-if (is_singular('post')) {
+if (! is_front_page()) {
 
 ?>
 <header class="entry-header has-text-align-center<?php echo esc_attr( $entry_header_classes ); ?>">
