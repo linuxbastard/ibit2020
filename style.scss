@@ -171,19 +171,41 @@ button.nav-toggle.active #nav-icon2 span:nth-child(6) {
   }
 }
 @media (min-width: 1000px) {
+  #site-header.scrolled {
+    box-shadow:0 0 50px 0 rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    -webkit-transition: .5s ease-in;
+    -moz-transition: .5s ease-in;
+    -o-transition: .5s ease-in;
+    -ms-transition: .5s ease-in;
+    transition: .5s ease-in;
+    width: 100%;
+    z-index: 20;
+    .header-inner {
+      padding: 5px 0;
+    }
+  }
+  .header-titles-wrapper {
+    max-width: 60%;
+  }
   .wp-custom-logo {
     .header-titles {
       column-count: 2;
       column-fill:balance;
       align-items: flex-start;
-    }
-    .site-logo-heading {
-      font-size: 1.8em;
-      margin-top: 1rem;
-      margin-left: 25px;
-    }
-    .site-description {
-      font-size: 1em;
+      .logo-right {}
+      .logo-left {
+        .site-logo-heading {
+          color: #0a4b78;
+          font-size: 2em;
+          margin-left: 25px;
+        }
+        .site-description {
+          font-size: 0.8em;
+          margin-top: 0;
+        }
+      }
     }
   }
 }
