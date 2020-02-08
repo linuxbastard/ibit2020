@@ -158,6 +158,18 @@ button.nav-toggle.active #nav-icon2 span:nth-child(6) {
   left: calc(50% - 5px);
   top: 17px;
 }
+.wp-custom-logo {
+  .header-titles {
+    .logo-right {}
+    .logo-left {
+      .site-logo-heading {
+        color: #0a4b78;
+      }
+      .site-description {
+      }
+    }
+  }
+}
 @media (min-width: 1000px) {
   .wp-custom-logo {
     .header-titles {
