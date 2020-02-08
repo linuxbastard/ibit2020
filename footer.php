@@ -42,7 +42,7 @@ if ( ! is_page_template( array( 'templates/template-canvas.php' ) ) ) {
 
 					</div><!-- .footer-credits -->
 
-					<a class="to-the-top" href="#site-header">
+					<a class="to-the-top" href="#site-content">
 						<span class="to-the-top-long">
 							<?php
 							/* translators: %s: HTML character for up arrow */
