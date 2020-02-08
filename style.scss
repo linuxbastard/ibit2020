@@ -11,6 +11,13 @@
  Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
  Text Domain:  ibit2020
 */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, a.site-logo-heading {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-weight: normal;
+}
 .footer-partners-section {
   padding: 0;
 }
