@@ -14,6 +14,7 @@ function ibit2020_enqueue_styles() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     ); */
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Montserrat:400,400i,700,800&display=swap', false );
     wp_enqueue_script( 'ibit-customjs', get_stylesheet_directory_uri() . '/custom.js', array ( 'jquery' ), 1.1, true);
 }
 // Add featured image sizes
